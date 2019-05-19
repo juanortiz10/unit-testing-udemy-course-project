@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-
-import { getDemoRequest } from '../../redux/actions/demoActions';
 
 import User from '../../components/User';
 
 class Home extends Component {
-	componentWillMount() {
-		this.props.getDemoRequest('hey');
-	}
+
 	render() {
 		const { users } = this.props;
 
@@ -23,21 +18,4 @@ class Home extends Component {
 	}
 }
 
-const mapDispatchToProps = (dispatch, props) => {
-	return {
-		getDemoRequest: payload => {
-			dispatch(getDemoRequest(payload));
-		}
-	};
-};
-const mapStateToProps = state => {
-	return {
-		users: state.demoReducer[0]
-	};
-};
-
-Home.propTypes = {
-	dispatch: PropTypes.func
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;
