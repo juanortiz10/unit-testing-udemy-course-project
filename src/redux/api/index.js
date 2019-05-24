@@ -7,3 +7,11 @@ export const getDemo = params => {
 		return response.data;
 	});
 };
+
+export const apiCall = (url, data, headers, method) =>
+	axios({
+		method,
+		url,
+		data,
+		headers
+	});
