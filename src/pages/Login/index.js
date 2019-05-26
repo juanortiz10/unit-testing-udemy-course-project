@@ -5,6 +5,7 @@ import Card from "@material-ui/core/Card";
 import GithubLogin from "react-github-login";
 import { connect } from "react-redux";
 import { compose } from "redux";
+import { Redirect} from "react-router-dom";
 
 import { getGithubToken } from "../../redux/actions/login";
 import { styles } from "./styles";
@@ -17,18 +18,23 @@ class Login extends Component {
   }
 
   onFailure = response => {
-    console.log(response);
+    alert("No ha sido exitoso intenta de nuevo mas tarde!");
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, githubToken } = this.props;
+
+    if (githubToken) {
+      return <Redirect to="/home"/>;
+    }
+
     return(
       <div className={classes.container}>
         <Card className={classes.card}>
           <Typography variant="h1" className={classes.title}>Iniciar sesion</Typography>
           <GithubLogin
             clientId={process.env.REACT_APP_GITHUB_CLIENT_ID}
-            redirectUri={process.env.REACT_APP_GITHUB_CALLBACK_URL}
+            redirectUri=""
             className={classes.button}
             onSuccess={this.onSuccess}
             onFailure={this.onFailure}
