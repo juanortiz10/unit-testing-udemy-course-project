@@ -12,7 +12,7 @@ import { styles } from "./styles";
 
 class Login extends Component {
   onSuccess = response => {
-    if (response.code) {
+    if (response && response.code) {
       this.props.getGithubToken({ code: response.code });
     }
   }
@@ -52,6 +52,8 @@ const actions = {
 const mapStateToProps = state => ({
   githubToken: state.login.githubToken
 });
+
+export { Login };
 
 export default compose(
   withStyles(styles),

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login/> El snapshot es correcto 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1"
+  >
+    <h1
+      className="MuiTypography-root-29 MuiTypography-h1-41"
+    >
+      Iniciar sesion
+    </h1>
+    <button
+      onClick={[Function]}
+    >
+      Github account
+    </button>
+  </div>
+</div>
+`;
