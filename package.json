@@ -7,7 +7,7 @@
     "axios": "^0.18.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-github-login": "^1.0.3",
